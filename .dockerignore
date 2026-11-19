@@ -1,0 +1,12 @@
+**/node_modules
+**/.venv
+**/__pycache__
+**/.pytest_cache
+backend/osrm-data
+backend/data/raw
+frontend/dist
+frontend/screenshots
+.git
+frontend/public/static-data
+docs
+.github

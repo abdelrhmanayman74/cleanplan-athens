@@ -1,0 +1,36 @@
+{
+  "name": "cleanplan-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:mock": "cross-env VITE_MOCK=1 vite",
+    "build": "tsc -b && vite build",
+    "build:mock": "tsc -b && cross-env VITE_MOCK=1 vite build",
+    "preview": "vite preview",
+    "fixture": "esbuild scripts/build-fixture.ts --bundle --platform=node --format=esm --outfile=scripts/.build-fixture.mjs && node scripts/.build-fixture.mjs",
+    "typecheck": "tsc -b",
+    "build:static": "tsc -b && cross-env VITE_STATIC=1 vite build",
+    "dev:static": "cross-env VITE_STATIC=1 vite"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "read-excel-file": "^9.3.17",
+    "write-excel-file": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.14",
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.21.5",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

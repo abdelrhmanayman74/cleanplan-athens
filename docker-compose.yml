@@ -1,0 +1,22 @@
+# docker compose up --build   ->  http://localhost:8000  (API + frontend)
+# Optional: docker compose --profile osrm up osrm   (only needed to rebuild data, see backend/README.md)
+services:
+  app:
+    build: .
+    image: cleanplan:latest
+    ports:
+      - "8000:8000"
+    environment:
+      # Set both to use Google Routes (WALK) for addresses outside the precomputed matrix:
+      TRAVEL_PROVIDER: ${TRAVEL_PROVIDER:-}
+      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY:-}
+    restart: unless-stopped
+
+  osrm:
+    profiles: ["osrm"]
+    image: ghcr.io/project-osrm/osrm-backend:v5.27.1
+    command: osrm-routed --algorithm mld --max-table-size 2000 /data/athens.osrm
+    volumes:
+      - ./backend/osrm-data:/data
+    ports:
+      - "5000:5000"

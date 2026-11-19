@@ -1,0 +1,27 @@
+# dependencies and environments
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# build output and caches
+frontend/dist/
+*.tsbuildinfo
+.pytest_cache/
+.ruff_cache/
+frontend/scripts/.build-fixture.mjs
+
+# large or local-only data (rebuilt by backend/scripts/, see backend/README.md)
+backend/osrm-data/
+backend/data/raw/
+backend/data/plan_preview.png
+
+# working screenshots; a curated set lives in docs/
+frontend/screenshots/
+
+# local environment and secrets
+.env
+.env.*
+*.local
+.claude/
+.DS_Store

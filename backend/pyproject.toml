@@ -1,0 +1,40 @@
+[project]
+name = "cleanplan-backend"
+version = "0.1.0"
+description = "CleanPlan demo backend: territory, day-pattern and walking-route optimisation for building cleaning crews"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.165.0",
+    "httpx>=0.28.1",
+    "numpy>=2.4.6",
+    "openpyxl>=3.1.5",
+    "ortools>=9.15.6755",
+    "pandas>=3.1.1",
+    "polyline>=2.0.5",
+    "python-multipart>=0.0.34",
+    "scikit-learn>=1.9.1",
+    "scipy>=1.17.1",
+    "shapely>=2.2.0",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+pipeline = [
+    "matplotlib>=3.11.2",
+    "osmium>=4.3.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"
+filterwarnings = ["ignore:Using `httpx` with `starlette.testclient`"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["B905"]  # zip() over equal-length sequences throughout

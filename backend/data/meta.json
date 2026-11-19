@@ -1,0 +1,12 @@
+{
+  "nodes": 1057,
+  "buildings": 1000,
+  "stations": 57,
+  "haversine_sec_per_m": 0.8374258167867594,
+  "haversine_detour_factor": 1.1630914122038325,
+  "walk_speed_mps": 1.3888888888888888,
+  "isolated_buildings": 0,
+  "osrm_profile": "foot (osrm-backend v5.27.1, /opt/foot.lua)",
+  "osm_extract": "Geofabrik greece-latest.osm.pbf, clipped to Athens bbox",
+  "built_at": "2026-11-19T09:46:59Z"
+}
